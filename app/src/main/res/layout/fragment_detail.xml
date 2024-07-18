@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/footer_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/detail_back_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:scaleType="fitXY"
+                android:background="@android:color/transparent"
+                app:tint="@color/white"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="16dp" />
+
+            <ImageView
+                android:id="@+id/detail_user_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="14dp"
+                android:background="@drawable/detail_img_background"
+                android:clipToOutline="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_img"
+                tools:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/detail_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/detail_user_img"
+                app:layout_constraintTop_toTopOf="@id/detail_user_img"
+                tools:text="난쉽" />
+
+            <TextView
+                android:id="@+id/detail_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/detail_nickname"
+                app:layout_constraintTop_toBottomOf="@id/detail_nickname"
+                tools:text="동래구 온천제2동"
+                android:layout_marginTop="10dp" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/detail_temperature_flow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:constraint_referenced_ids="detail_temperature,detail_expression"
+                app:flow_horizontalGap="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_nickname" />
+
+            <TextView
+                android:id="@+id/detail_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/skyblue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="39.3" />
+
+            <ImageView
+                android:id="@+id/detail_expression"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                tools:src="@drawable/smile_img" />
+
+            <TextView
+                android:id="@+id/detail_manner_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manner_temperature"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/detail_temperature_flow"
+                app:layout_constraintTop_toBottomOf="@id/detail_temperature_flow" />
+
+            <View
+                android:id="@+id/horizontal_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="14dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/detail_manner_temperature" />
+
+            <TextView
+                android:id="@+id/detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_divider"
+                tools:text="샤넬 탑핸들 가방" />
+
+            <TextView
+                android:id="@+id/detail_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@id/detail_title"
+                app:layout_constraintTop_toBottomOf="@id/detail_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="샤넬 트랜디 CC 탑핸들 스몰 램스킨 블랙 금장 플랩백 !\n \n 색상 : 블랙\n사이즈 : 25.5cm * 17.5cm * 8cm\n구성 : 본품더스트\n\n급하게 돈이 필요해서 팝니다 ㅠ ㅠ" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/detail_favorite_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_favorite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp"
+            app:tint="@color/black" />
+
+        <View
+            android:id="@+id/vertical_divider"
+            android:layout_width="1dp"
+            android:layout_height="34dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/detail_favorite_btn"
+            android:layout_marginBottom="24dp"
+            android:background="@color/gray"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:id="@+id/detail_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="180,000원"
+            app:layout_constraintTop_toTopOf="@id/vertical_divider"
+            app:layout_constraintBottom_toBottomOf="@id/vertical_divider"
+            app:layout_constraintStart_toEndOf="@id/vertical_divider"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/detail_chat_btn"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="@string/chat_btn"
+            android:background="@drawable/detail_btn_background"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="@id/detail_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="14dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

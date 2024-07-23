@@ -34,6 +34,7 @@ class DetailFragment : Fragment() {
         var isChecked = true
 
         with(binding) {
+            detailUserImg.clipToOutline = true
             param?.let {
                 detailImg.setImageResource(it.imgSrc)
                 detailNickname.text = it.seller

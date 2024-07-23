@@ -11,7 +11,6 @@
         android:layout_height="120dp"
         android:layout_margin="12dp"
         android:background="@drawable/list_img_background"
-        android:clipToOutline="true"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

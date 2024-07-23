@@ -29,6 +29,7 @@ class ProductListAdapter(val items: MutableList<Product>) : RecyclerView.Adapter
         var isChecked = true
 
         holder.productImg.setImageResource(items[position].imgSrc)
+        holder.productImg.clipToOutline = true
         holder.productName.text = items[position].name
         holder.productLocation.text = items[position].address
         holder.productPrice.text = items[position].price
